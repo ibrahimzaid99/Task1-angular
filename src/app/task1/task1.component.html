@@ -1,0 +1,66 @@
+<div class="bg-dark p-5 text-light text-center">
+    <div class="container">
+      <h1>Student List</h1>
+      <div class="row mt-5">
+        <div class="col-9">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Student Name"
+            name="Studentname"
+            [(ngModel)]="inputValue"
+            required
+          />
+            <div *ngIf="nameExists"  class="text-danger">
+              Name already exists and can not be duplicated
+            </div>
+            <div *ngIf="nameRequired"  class="text-danger">
+              Name is required
+            </div>
+            <div *ngIf="nameLengthInvalid"  class="text-danger">
+              Name must be more than 4 letters
+            </div>
+         <input
+          type="number"
+          class="form-control my-3"
+          placeholder="Enter His Age"
+          name="studentage"
+          [(ngModel)]="input2Value"
+          required
+        />
+        <div *ngIf="ageRequired" class="text-danger">
+          Age is required
+        </div>
+        <div *ngIf="ageInvalid" class="text-danger">
+          Age must be greater than or equal to 18
+        </div>
+      </div>
+        <div class="col-3 mt-4">
+          <button (click)="addNewList()" class="btn btn-outline-warning">
+            Add Student
+          </button>
+        </div>
+      </div>
+          <table class="table table-bordered mt-4">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Remove Student</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+  
+                <tr *ngFor="let student of getObjectKeys(studentList);let i = index">
+                  <td>{{ i }}</td>
+                  <td>{{ student }}</td>
+                  <td>{{ studentList[student] }}</td>
+                <td><button class="btn btn-danger" (click)="remove(student)">Remove</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,16 @@
+.bz {
+   
+    top: 50%;
+    left: 50%;
+    background-color: #e6572c;
+    color: #fff;
+    width: 50%;
+    border: none;
+    padding: 20px 30px;
+    box-shadow: 0 10px 50px #000;
+    cursor: pointer;
+    /* transform: translateX(-50%) translateY(100px);
+    opacity: 0; */
+}
+
+

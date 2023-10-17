@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first';
+  word:string=""
+  show(x: any){
+this.word=x;
+  }
 }
